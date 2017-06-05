@@ -1,12 +1,36 @@
 <template>
-	<div class="cntr-p" >	
-		<div class="login-wrap">
-			login page
+	<div class="login-wrap" >	
+		<div class="login-cell">
+			<div class="lc-account">
+				<div>
+					<input type="email" ref="accountField" v-model.trim="account" class="form-control" @keyup="accountEnter"/>
+				</div>
+				<div>
+					<button @click="loginAction">login</button>
+				</div>
+			</div>
+			<div class="lc-passwd" v-if="hasAccount">
+				<div>
+					<input type="email" ref="accountField" v-model.trim="account" class="form-control" @keyup="accountEnter"/>
+				</div>
+				<div>
+					<button @click="loginAction">login</button>
+				</div>
+			</div>
 		</div>
     </div>
 </template>
 
 <style scoped>
+	.login-wrap{
+		position:fixed;
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		overflow:hidden;
+		background:rgba(0,0,0,.6);
+	}
 </style>
 
 <script>
@@ -16,11 +40,12 @@
     	},
     	data(){
     		return {
-    			// msg:'hello vue world'
+    			account:'',
+				hasAccount:false
     		}
     	},
     	mounted(){
-//     		console.log('main page')
+//     		console.log('login page')
     	},
     	computed:{
     		
@@ -29,7 +54,17 @@
 
     	},
     	methods:{
-    		
+    		accountEnter($event){
+				if($event.keyCode === 13){
+					this.loginAction();
+				}
+			},
+			loginAction($event){
+				if(this.account==''){
+					this.$refs.accountField.focus();
+
+				}
+			}
     	},
     }
 </script>
