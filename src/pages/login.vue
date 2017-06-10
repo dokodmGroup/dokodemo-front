@@ -1,7 +1,8 @@
 <template>
 	<div class="login-wrap" >	
 		<div class="login-cell">
-			<div class="lc-account">
+			<!--<transition name="fade-inout">-->
+			<div class="lc-account" v-if="!hasAccount">
 				<div>
 					<input type="email" ref="accountField" v-model.trim="account" class="form-control" @keyup="accountEnter"/>
 				</div>
@@ -9,7 +10,7 @@
 					<button @click="loginAction">login</button>
 				</div>
 			</div>
-			<div class="lc-passwd" v-if="hasAccount">
+			<div class="lc-passwd" v-else>
 				<div>
 					<input type="email" ref="accountField" v-model.trim="account" class="form-control" @keyup="accountEnter"/>
 				</div>
@@ -17,6 +18,7 @@
 					<button @click="loginAction">login</button>
 				</div>
 			</div>
+			<!--</transition>-->
 		</div>
     </div>
 </template>
