@@ -1,15 +1,15 @@
 <template>
   <section>
-    hello Dokodm Project
+    Dokodm Project message component
   </section>
 </template>
 
 <script>
 export default {
-  name: 'main',
+  name: 'msg',
   data () {
     return {
-      msg: 'hello'
+      msg:'hello'
     }
   }
 }
