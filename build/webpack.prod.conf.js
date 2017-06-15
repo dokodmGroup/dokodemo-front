@@ -8,6 +8,7 @@ var CopyWebpackPlugin = require('copy-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
+var FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 var env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
@@ -41,7 +42,7 @@ var webpackConfig = merge(baseWebpackConfig, {
     new FaviconsWebpackPlugin({
       // Your source logo 
       logo: 'logo.png',
-      // logo:path.join(__dirname, '../src/assets/logo.png'),
+      logo:path.join(__dirname, '../logo.png'),
       // The prefix for all image files (might be a folder or a name) 
       prefix: 'icons-[hash]/',
       // Emit all stats of the generated icons 
@@ -71,7 +72,7 @@ var webpackConfig = merge(baseWebpackConfig, {
         yandex: false,
         windows: false
       }
-    })
+    }),
     // extract css into its own file
     new ExtractTextPlugin({
       filename: utils.assetsPath('css/[name].[contenthash].css')
