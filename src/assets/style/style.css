@@ -1,3 +1,116 @@
 @charset "UTF-8";
 /*********       dokodm common style     **********/
 
+/*@font-face {
+  font-family: 'iconfont'; 
+  src: url('//at.alicdn.com/t/font_3lg5m3kw0suoko6r.eot');
+  src: url('//at.alicdn.com/t/font_3lg5m3kw0suoko6r.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_3lg5m3kw0suoko6r.woff') format('woff'),
+  url('//at.alicdn.com/t/font_3lg5m3kw0suoko6r.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_3lg5m3kw0suoko6r.svg#iconfont') format('svg');
+}*/
+
+/*theme color*/
+.text-black{
+	color:#000;
+}
+.text-danger{
+	color:#FF4949;
+}
+.text-warning{
+	color:#F7BA2A;
+}
+.text-info{
+	color:#58B7FF;
+}
+.text-success{
+	color:#13CE66;
+}
+.text-primary{
+	color:#20A0FF;
+}
+.text-muted{
+	color:#777;
+}
+
+/*theme background color*/
+.bg-black{
+	background-color:#000;
+}
+.bg-danger{
+	background-color:#FF4949;
+}
+.bg-warning{
+	background-color:#F7BA2A;
+}
+.bg-info{
+	background-color:#58B7FF;
+}
+.bg-success{
+	background-color:#13CE66;
+}
+.bg-primary{
+	background-color:#20A0FF;
+}
+.bg-muted{
+	background-color:#777;
+}
+.bg-light-white{
+  background-color:#fafafa;
+}
+
+/*animations*/
+.fade-enter-active, 
+.fade-leave-active {
+  transition: opacity .5s
+}
+.fade-enter, 
+.fade-leave-to{
+  opacity: 0
+}
+
+.sash{
+  border-radius:3px;
+  border-width:1px;
+  border-style:solid;
+  border-color:#ccc;
+}
+.sash-black{
+	border-color:#000;
+}
+.sash-danger{
+	border-color:#FF4949;
+}
+.sash-warning{
+	border-color:#F7BA2A;
+}
+.sash-info{
+	border-color:#58B7FF;
+}
+.sash-success{
+	border-color:#13CE66;
+}
+.sash-primary{
+	border-color:#20A0FF;
+}
+.sash-muted{
+	border-color:#777;
+}
+
+/*custom bootstrap style*/
+.form-control{
+  height:auto;
+  padding:5px 12px;
+}
+.btn{
+  padding:5px 12px;
+}
+.btn-info{
+  background-color:#58B7FF;
+  border-color:#46afff;
+}
+.btn-info:hover{
+  background-color:#4eb3ff;
+  border-color:#29a3ff;
+}
+

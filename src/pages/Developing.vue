@@ -1,16 +1,18 @@
 <template>
   <section>
-    hello Dokodm Project
+    Developing page
+    <router-link :to="{name:'playground'}">back to playground</router-link>
   </section>
 </template>
 
 <script>
 export default {
-  name: 'main',
   data () {
     return {
-      msg: 'hello'
+      
     }
+  },
+  mounted(){
   }
 }
 </script>

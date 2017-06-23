@@ -27,7 +27,18 @@ module.exports = {
     autoOpenBrowser: true,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      // "/*": {
+      //   "target": {
+      //     "host": "api.dokodm.com",
+      //     "protocol": 'https:',
+      //     // "port": 80
+      //   },
+      //   ignorePath: true,
+      //   changeOrigin: true,
+      //   secure: false
+      // }
+    },
     // CSS Sourcemaps off by default because relative paths are "buggy"
     // with this option, according to the CSS-Loader README
     // (https://github.com/webpack/css-loader#sourcemaps)

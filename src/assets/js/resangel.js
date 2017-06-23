@@ -1,11 +1,11 @@
 // XMLHttpRequest with Promise and ES6 syntax
 // Author by AquirJan, wing.free0@gmail.com
 // create at 8-2-2016
-// last modify at 5-18-2017
-// version 1.0.8;
-// commit : modify the return reject position;
+// last modify at 6-19-2017
+// version 1.1.1;
+// commit : add host option which can be previous url of request
 
-class xhres6 {
+export default class resangel {
 
 	constructor(_options){
 	
@@ -18,18 +18,18 @@ class xhres6 {
 			url:'',
 			resDataType:'', //response data type
 			timeout:10000,
-			outside_data:{}
+			host:'',
+			// outside_data:{}
 		}
 
-		this.config = (_options)=>{
-			this.def_opts = Object.assign({}, this.def_opts, _options)
-			console.dir(this.def_opts);
+		this.config = (callback)=>{
+			return callback(this.def_opts);
 		}
 		
 		this.version = '1.0.8';
 		
 		this.xhr=new XMLHttpRequest();
-		
+
 		if(_options && typeof(_options) === 'object'){
 			this.options = Object.assign({}, this.def_opts, _options);
 			return this.request();
@@ -78,11 +78,11 @@ class xhres6 {
 			this.options.url += this.buildParamsAsQueryString(this.options.data);
 		}
 		
-		const { url, method, timeout, async, data, headers, form_data, sendDataType } = this.options;
+		const {host, url, method, timeout, async, data, headers, form_data, sendDataType } = this.options;
 			
 		const xhr = this.xhr;
 		
-		xhr.open(method, url, async);
+		xhr.open(method, host+url, async);
 		if(sendDataType == 'json' ){
 			xhr.setRequestHeader('Accept', 'application/json');
 			xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
@@ -120,14 +120,14 @@ class xhres6 {
 		const xhrPromise = new Promise( (resolve, reject) => {
 			xhr.onreadystatechange = () => {
 				if(xhr.readyState !== 4){
-					reject({xhr_status:xhr.status, info:"readyState Error"});
 					return;
 				}
 				if(xhr.status==0){
-					reject({xhr_status:xhr.status, info:"timeout"});
+					reject({ status: xhr.status, info: "timeout"});
 					return;
 				}
 				let rptext = typeof(xhr.responseText) === 'string' && xhr.responseText!=='' ? JSON.parse(xhr.responseText) : xhr.responseText;
+				
 				const header_array = xhr.getAllResponseHeaders().toLowerCase().replace(/\n/g,'||').replace(/\|\|$/,'').split('||');
 				let headers_obj = {};
 				for(let i=0;i<header_array.length;i++){
@@ -135,7 +135,7 @@ class xhres6 {
 					headers_obj[obj_item[0]] = obj_item[1];
 				}
 				
-				rptext = Object.assign({}, { headers: headers_obj, body : rptext, xhr_status : xhr.status, outside_data:this.options.outside_data});
+				rptext = Object.assign({}, { headers: headers_obj, body : rptext, status : xhr.status});
 				resolve(rptext);
 			}
 		})
@@ -168,5 +168,3 @@ class xhres6 {
 	}
 	
 }
-
-export default xhres6;
