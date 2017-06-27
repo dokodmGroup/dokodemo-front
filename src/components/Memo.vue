@@ -1,9 +1,9 @@
 <template>
-  <div class="msg-wrap" :class="`bg-${type}`">
-    <div class="msg-content cntr-shadow cursor-pointer cntr-flex justify-between aligni-center">
+  <div class="memo-wrap" :style="wrapStyle">
+    <div class="memo-content text-white cntr-shadow cursor-pointer cntr-flex justify-between aligni-center" :class="`bg-${type}`">
       <slot v-if="$slots.default"></slot>
-      <div v-else >{{content}}</div>
-      <i class="iconfont icon-remove font-size-lg"></i>
+      <div v-else class="cntr-pr-sm">{{content}}</div>
+      <i class="iconfont icon-remove font-size-lg" @click.stop.prevent="closeTap"></i>
     </div>
   </div>
 </template>
@@ -12,7 +12,8 @@ export default {
   name: 'memo',
   data () {
     return {
-      
+      wrapStyle:null,
+      closeAction:()=>{}
     }
   },
   props:{
@@ -25,9 +26,12 @@ export default {
       default:''
     }
   },
-  mounted(){
-    console.log(this.$slots);
-  },
+  methods:{
+    closeTap($event){
+      this.$emit('close', true)
+      this.closeAction();
+    }
+  }
   // render(createElement){
   //   return createElement('div',{
   //       class:`msg-wrap bg-${this.type}`
@@ -52,9 +56,16 @@ export default {
 </script>
 
 <style scoped>
-  .msg-content{
+  /*.memo-wrap{
+    position:absolute;
+    top:.5rem;
+    right:.5rem;
+  }*/
+  .memo-content{
+    min-width:100px;
+    max-width:200px;
     border-radius:3px;
-    border:1px solid #ccc;
+    /*border:1px solid #ccc;*/
     /*box-shadow:0 0 2px -1px #000;*/
     padding:.4rem .5rem;
     margin-bottom:.5rem;

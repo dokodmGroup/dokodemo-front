@@ -9,6 +9,12 @@
 	-webkit-touch-callout: none;
 }
 
+.rm-outline,
+.rm-outline:focus,
+.rm-outline:hover{
+	outline: none !important;
+}
+
 /* max z-index */
 /***
 Browser         Max z-index value  When exceeded, value changes to:

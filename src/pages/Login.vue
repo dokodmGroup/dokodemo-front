@@ -7,14 +7,14 @@
               <div class="logo-wrap bg-info cntr-p-m text-white">
                 <img src="../assets/logo.png" class="logo"/>&nbsp;Dokodm
               </div>
-              <div v-if="resmsg" class="text-danger cntr-p-sm" v-text="resmsg" ></div>
+              <!--<div v-if="resmsg" class="text-danger cntr-p-sm" v-text="resmsg" ></div>-->
               <form name="loginform" class="cntr-p-m">
                 <div class="cntr-mb-m">
                     <input v-model.trim="account" ref="account" type="text" required placeholder="请输入账号" class="form-control"/>
                 </div>
                 <div class="cntr-flex aligni-center justify-between">
                   <router-link :to="{name:'retake-account'}" class="font-size-sm" >忘记账号？</router-link>
-                  <button type="submit" class="btn btn-info" @click.stop.prevent="checkNameAction" :disabled="checkNameLoading">登录账号</button>
+                  <button type="submit" class="btn btn-info rm-outline" @click.stop.prevent="checkNameAction" :disabled="checkNameLoading">登录账号</button>
                 </div>
               </form>
             </div>
@@ -22,8 +22,8 @@
               <div class="logo-wrap bg-info cntr-p-m text-white">
                 <img src="../assets/logo.png" class="logo"/>&nbsp;Dokodm
               </div>
-              <div v-if="resmsg" class="text-danger cntr-p-sm" v-text="resmsg" ></div>
-              <form name="passwordform">
+              <!--<div v-if="resmsg" class="text-danger cntr-p-sm" v-text="resmsg" ></div>-->
+              <form name="passwordform" class="cntr-p-m">
               <div class="cntr-mb-m">
                   <input v-model.trim="password" ref="password" type="password" required placeholder="请输入密码" class="form-control"/>
               </div>
@@ -53,18 +53,16 @@ export default {
     }
   },
   methods:{
-    initStatus(){
-      this.resmsg = null;
-    },
+    // initStatus(){
+    //   this.resmsg = null;
+    // },
     checkNameAction(){
       // console.log(document.loginform);
       console.log(this.account);
       if(this.account==''){
-        this.resmsg="请填写账号";
+        // this.resmsg="请填写账号";
         this.$refs.account.focus();
-        this.$memo({
-          msg:'hello world'
-        })
+        this.$memo.warning('请填写账号')
         return;
       }
 
@@ -78,19 +76,22 @@ export default {
           if(res.status == 200){
             this.isAccount = false;
             this.userId = res.body.id;
-            this.resmsg = null;
+            // this.resmsg = null;
           }else{
-            this.resmsg = decodeURI(res.headers['x-tips']);
+            this.$memo.info(decodeURI(res.headers['x-tips']))
+            // this.resmsg = decodeURI(res.headers['x-tips']);
           }
           
         },(error)=>{
-          this.resmsg = decodeURI(error.info);
+          this.$memo.danger(decodeURI(res.headers['x-tips']))
+          // this.resmsg = decodeURI(error.info);
           this.checkNameLoading = false;
         })
     },
     checkPasswdAction(){
       if(this.password==''){
-        this.resmsg="请填写密码";
+        // this.resmsg="请填写密码";
+        this.$memo.warning('请填写密码')
         this.$refs.password.focus();
         return;
       }
@@ -103,16 +104,17 @@ export default {
       }).then((res)=>{
           this.checkPasswdLoading = false;
           if(res.status == 200){
-            console.log(res);
             this.$router.push({
               name:'playground'
             })
           }else{
-            this.resmsg = decodeURI(res.headers['x-tips']);
+            this.$memo.danger(decodeURI(res.headers['x-tips']))
+            // this.resmsg = decodeURI(res.headers['x-tips']);
           }
           
         },(error)=>{
-          this.resmsg = decodeURI(error.info);
+          this.$memo.danger(decodeURI(res.headers['x-tips']))
+          // this.resmsg = decodeURI(error.info);
           this.checkPasswdLoading = false;
         })
     }
