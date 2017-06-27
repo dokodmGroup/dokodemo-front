@@ -42,6 +42,10 @@ const memo = {
                         "top":tmp_top+"px",
                         "right":'.5rem',
                     },
+                    contentStyle:{
+                        'min-width':'100px',
+                        'max-width':'200px'
+                    },
                     closeAction:()=>{
                         clearTimeout(ticker);
                         ticker = null;

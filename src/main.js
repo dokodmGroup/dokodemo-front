@@ -32,10 +32,13 @@ axios.interceptors.request.use((config)=>{
 
 Vue.use(VueAxios, axios)
 
-import Memo from '@/plugins/Memo.js'
+// import MemoComponent from '@/components/Memo'
+// Vue.component(MemoComponent.name, MemoComponent)
+
+import Memo from '@/plugins/Memo'
 Vue.use(Memo)
 
-import resangel from '@/plugins/vue-resangel.js'
+import resangel from '@/plugins/vue-resangel'
 Vue.use(resangel)
 
 Vue.resangleConfig((_options)=>{
