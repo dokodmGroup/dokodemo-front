@@ -58,7 +58,7 @@ export default {
     // },
     checkNameAction(){
       // console.log(document.loginform);
-      console.log(this.account);
+      // console.log(this.account);
       if(this.account==''){
         // this.resmsg="请填写账号";
         this.$refs.account.focus();

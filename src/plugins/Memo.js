@@ -25,7 +25,7 @@ const memo = {
             
             let extendMemo = Vue.extend(Memo);
             const memo_toast_list = document.getElementsByClassName('memo-toast');
-            console.dir(memo_toast_list);
+            // console.dir(memo_toast_list);
             let tmp_top = 10;
             Array.from(memo_toast_list).forEach((value, key)=>{
                 tmp_top = tmp_top+value.clientHeight;
@@ -34,7 +34,7 @@ const memo = {
             let memoInstance = new extendMemo({
                 propsData:{
                     type:options.type||'info',
-                    content:options.content||'default content',
+                    content:options.content||'default content default content default content default content',
                 },
                 data:{
                     wrapStyle:{

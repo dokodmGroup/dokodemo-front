@@ -64,6 +64,16 @@ export default new Router({
       component: resolve => require(['@/pages/Login'], resolve)
     },
     {
+      path: '/news-detail/:itemId',
+      name: 'news-detail',
+      component: Developing
+    },
+    {
+      path: '/signup',
+      name: 'signup',
+      component: Developing
+    },
+    {
       path: '/*',
       name: '404',
       component: PageNotFound

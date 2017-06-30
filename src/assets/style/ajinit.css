@@ -637,7 +637,7 @@ input:-webkit-autofill {
 }
 
 .cntr-shadow{
-	box-shadow: 0 4px 10px -1px #999;
+	box-shadow: 0 5px 20px -6px #333;
 }
 
 .cursor-pointer{

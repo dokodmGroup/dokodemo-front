@@ -17,7 +17,7 @@ Vue.config.devtools = false
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 
-window.localStorage.token = '235'
+// window.localStorage.token = '235'
 
 axios.interceptors.request.use((config)=>{
   // Do something before request is sent
@@ -41,6 +41,7 @@ Vue.use(Memo)
 import resangel from '@/plugins/vue-resangel'
 Vue.use(resangel)
 
+// localStorage.removeItem('token')
 Vue.resangleConfig((_options)=>{
   if (window.localStorage.token) {
       _options.headers['X-Token'] = `Token ${window.localStorage.token}`;

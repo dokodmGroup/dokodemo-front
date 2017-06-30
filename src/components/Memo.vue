@@ -1,6 +1,6 @@
 <template>
   <div class="memo-wrap" :style="wrapStyle">
-    <div class="memo-content text-white cntr-shadow cursor-pointer cntr-flex justify-between aligni-center" :class="`bg-${type}`" :style="contentStyle">
+    <div class="memo-content article-wrap text-white cntr-shadow cursor-pointer cntr-flex justify-between aligni-center" :class="`bg-${type}`" :style="contentStyle">
       <slot v-if="$slots.default"></slot>
       <div v-else class="cntr-pr-sm">{{content}}</div>
       <i class="iconfont icon-remove font-size-lg" @click.stop.prevent="closeTap"></i>
