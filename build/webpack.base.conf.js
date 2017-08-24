@@ -22,6 +22,7 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
+      // 'jsencrypt$': 'jsencrypt/bin/jsencrypt.min.js',
       '@': resolve('src')
     }
   },
@@ -41,6 +42,21 @@ module.exports = {
         loader: 'vue-loader',
         options: vueLoaderConfig
       },
+      // {
+      //   test: /\.css$/,
+      //   exclude: /node_modules/,
+      //   use: [
+      //       {
+      //           loader: 'style-loader',
+      //       },
+      //       {
+      //           loader: 'css-loader',
+      //       },
+      //       {
+      //           loader: 'postcss-loader'
+      //       }
+      //   ]
+      // },
       {
         test: /\.js$/,
         loader: 'babel-loader',

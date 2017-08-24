@@ -1,7 +1,10 @@
 <template>
   <section>
-    page not found
-    <router-link :to="{name:'playground'}">back to playground</router-link>
+    <div class="cntr-p-m">
+      page not found 404<br/>
+      <router-link :to="{name:'playground'}">back to playground</router-link>
+    </div>
+    
   </section>
 </template>
 

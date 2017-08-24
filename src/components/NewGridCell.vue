@@ -52,12 +52,13 @@
   .wrap{
     position:relative;
     /*perspective:550;*/
+    padding:.5rem;
     z-index: 10;
 	}
   .wrap-belonging{
     position: absolute;
     left: 5%;
-    bottom: 10px;
+    bottom: 10%;
     width: 90%;
     height: 15px;
     border-radius: 50%;
@@ -77,6 +78,7 @@
     "title title";
   }
   .wrap:hover .wrap-cell{
+    background:#fff;
     /*transform: rotateY(5deg);*/
   }
   .wrap:hover .wrap-belonging{

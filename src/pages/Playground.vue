@@ -12,9 +12,9 @@
 							<new-grid-cell class="x-cntr-m-m" :data="item">
 								<ul slot="assist" class="x-cntr-flex font-size-sm assist-wrap justify-between">
 									<li>{{item.publish_time | formatTime}}</li>
+									<li class="text-right">{{item.publish_time | formatTime}}</li>
 									<li>{{item.publish_time | formatTime}}</li>
-									<li>{{item.publish_time | formatTime}}</li>
-									<li>{{item.publish_time | formatTime}}</li>
+									<li class="text-right">{{item.publish_time | formatTime}}</li>
 									<li>{{item.publish_time | formatTime}}</li>
 									<!--<li class="col-5 text-left">{{item.source}}</li>
 									<li class="col-5 text-right">{{item.comments}}</li>
@@ -51,11 +51,11 @@
 					{
 						"id":"7",
 						"uid":"1",
-						"title":"proko原版基础素描教程_手绘肖像视频教程3套16Gb",
+						"title":"proko原版基础素描教程_手绘肖",
 						"subtitle":"",
 						"source":"xx",
 						"source_url":"",
-						"context":"[img]http://wx3.sinaimg.cn/large/a3225577ly1fcz4o9b2gpj20jg0aygm6.jpg[/img][img]http://wx1.sinaimg.cn/large/a3225577ly1fcz4o9mfyej20p0164ai2.jpg[/img][img]http://wx2.sinaimg.cn/large/a3225577ly1fcz4oa18nsj20jg0nw0x8.jpg[/img][img]http://wx1.sinaimg.cn/large/a3225577ly1fcz4oamzajj20jg0onq7d.jpg[/img] [size=4][color=#ff0000]1、proko素描基础绘画，原版视频教程29课[/color][/size] 每次看到好的美术课程，总是感叹当年上学时的美术课是多么的索然无味。或者感叹这样好的课程为什么才做出来。非常生动有趣的基础课程。帅哥主讲。 L1 如何画嘴唇 How to Draw Lips - Step by Step L2 如何画嘴唇-解剖和结构 How to Draw Lips - Anatomy and...",
+						"context":"[img]http://wx3.sinaimg.cn/large/a3225577ly1fcz4o9b2gpj20jg0aygm6.jpg[/img][",
 						"publish_time":"1498098695"
 					},
 					{

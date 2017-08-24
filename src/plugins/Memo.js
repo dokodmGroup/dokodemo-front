@@ -41,6 +41,7 @@ const memo = {
                         'position':"absolute",
                         "top":tmp_top+"px",
                         "right":'.5rem',
+                        "z-index":'4000',
                     },
                     contentStyle:{
                         'min-width':'100px',

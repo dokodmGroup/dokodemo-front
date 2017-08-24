@@ -32,11 +32,6 @@ export default new Router({
           component: resolve => require(['@/pages/Addnew'], resolve)
         },
         {
-          path: 'pgtest',
-          name: 'pgtest',
-          component: Test
-        },
-        {
           path:'cdashboard',
           name:'cdashboard',
           component: Developing
@@ -69,14 +64,25 @@ export default new Router({
       component: Developing
     },
     {
+      path: '/editor',
+      name: 'editor',
+      component: resolve => require(['@/pages/Editor'], resolve)
+    },
+    {
       path: '/signup',
       name: 'signup',
-      component: Developing
+      component: resolve => require(['@/pages/Signup'], resolve)
+    },
+    {
+      path: '/test',
+      name: 'test',
+      component: Test
     },
     {
       path: '/*',
       name: '404',
       component: PageNotFound
     },
+    
   ]
 })

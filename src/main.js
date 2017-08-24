@@ -14,23 +14,24 @@ import store from './store'
 Vue.config.productionTip = false
 Vue.config.devtools = false
 
-import axios from 'axios'
-import VueAxios from 'vue-axios'
+// import axios from 'axios'
+// import VueAxios from 'vue-axios'
 
 // window.localStorage.token = '235'
 
-axios.interceptors.request.use((config)=>{
-  // Do something before request is sent
-  if (window.localStorage.token) {
-      config.headers['X-Token'] = `Token ${window.localStorage.token}`;
-  }
-  return config;
-},(error)=>{
-  // Do something with request error
-  return Promise.reject(error);
-});
+// axios.interceptors.request.use((config)=>{
+//   // Do something before request is sent
+//   if (window.localStorage.token) {
+//       config.headers['X-Token'] = `Token ${window.localStorage.token}`;
+//       config.headers['Accept'] = 'application/json;version=0.0.1';
+//   }
+//   return config;
+// },(error)=>{
+//   // Do something with request error
+//   return Promise.reject(error);
+// });
 
-Vue.use(VueAxios, axios)
+// Vue.use(VueAxios, axios)
 
 // import MemoComponent from '@/components/Memo'
 // Vue.component(MemoComponent.name, MemoComponent)
